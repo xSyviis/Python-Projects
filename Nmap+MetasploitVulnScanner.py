@@ -55,7 +55,7 @@ def vuln_scan():
                 #For each instance of port 445 found in index 2 (open ports), run the vulnerability scan
                 if '445' in row[2]:
                     #connect to the MsfRpc server at designated IP with provided password
-                    client = MsfRpcClient('password', server='192.168.49.129', ssl=False)
+                    client = MsfRpcClient('<INPUT RPC SERVER PASSWORD HERE>', server='<INPUT LOCAL RPC SERVER IP HERE>', ssl=False)
                     #define the type and module to be used from MetaSploit
                     auxiliary = client.modules.use('auxiliary', 'scanner/smb/smb_ms17_010')
                     #Using the csv, set RHOSTS to the value found at index 0(host IP)
